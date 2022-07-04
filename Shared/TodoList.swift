@@ -14,7 +14,13 @@ struct TodoList: View {
     
     var body: some View {
         if todos.isEmpty {
-            Text("No Todos")
+            VStack {
+                Text("No Todos")
+                    .font(.body)
+                    .fontWeight(.medium)
+                Text("Click the '+' icon to create a new todo")
+                    .font(.footnote)
+            }
         } else {
             List {
                 ForEach(todos) {
